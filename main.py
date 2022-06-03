@@ -3,25 +3,26 @@ from discord.ext import commands
 import os
 from os import system
 from colorama import Fore,init,Style
-os.system("cls")
+import pystyle
+from pystyle import Colors, Colorate
+os.system('cls & mode 54, 21')
 title = 'Stream Status︱Version 1.0︱Lumio#9585'
 system(f'title {title}')
-print(f"""{Fore.MAGENTA}
+print(Colorate.Horizontal(Colors.rainbow, ''' 
 
-  _, ___ __, __,  _, _, _    _, ___  _, ___ _,_  _,
- (_   |  |_) |_  / \ |\/|   (_   |  / \  |  | | (_ 
- , )  |  | \ |_  |~| |  |   , )  |  |~|  |  | | , )
-  ~   ~  ~ ~ ~~~ ~ ~ ~  ~    ~   ~  ~ ~  ~  `~'  ~ 
-                Credit : Lumio#9585                                                                        
+╔═╗╔╦╗╦═╗╔═╗╔═╗╔╦╗  ╔═╗╔╦╗╔═╗╔╦╗╦ ╦╔═╗
+╚═╗ ║ ╠╦╝║╣ ╠═╣║║║  ╚═╗ ║ ╠═╣ ║ ║ ║╚═╗
+╚═╝ ╩ ╩╚═╚═╝╩ ╩╩ ╩  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝╚═╝
 
-{Style.RESET_ALL}""")
+         Credit : Lumio#9585                                                                        
 
-token = input(' Enter Token \n > ') 
+'''))
+
+token = input(f"[{Fore.RED}!{Style.RESET_ALL}] Input Token : ") 
 
 bot = commands.Bot(command_prefix = "LUMIO")
 
-status = input('Enter Status \n > ')
-
+status = input(f"[{Fore.RED}!{Style.RESET_ALL}] Input Status : ")
 @bot.event
 async def on_connect():
     stream = discord.Streaming(
@@ -29,6 +30,10 @@ async def on_connect():
         url = 'https://www.twitch.tv/leekbeats' 
     )
     print('Streaming: ' + status)
+    os.system('cls')
+    print(Colorate.Horizontal(Colors.rainbow, ''' 
+    Enjoy <3
+'''))
     await bot.change_presence(activity=stream)
     
 bot.run(token, bot=False)  

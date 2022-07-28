@@ -14,7 +14,7 @@ print(Colorate.Horizontal(Colors.rainbow, '''
 ╚═╗ ║ ╠╦╝║╣ ╠═╣║║║  ╚═╗ ║ ╠═╣ ║ ║ ║╚═╗
 ╚═╝ ╩ ╩╚═╚═╝╩ ╩╩ ╩  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝╚═╝
 
-         Credit : Lumio#9585                                                                        
+         Credit. : Lumio#9585                                                                        
 
 '''))
 
